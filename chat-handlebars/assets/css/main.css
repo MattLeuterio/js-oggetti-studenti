@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Rubik', sans-serif;
+    background: #060606;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Scrollbar */
+
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+  
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #3a4147;
+    border-radius: 3px;
+}
+   
+
+::-webkit-scrollbar-thumb {
+    background: #3a4147;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #677079; 
+}
+
+/* utility */
+
+.u_flex {
+    display: flex;
+}
+
+.u_flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.u_flexEnd {
+    justify-content: flex-end;
+}
+
+/* App name */
+
+.app-name {
+    position: absolute;
+    font-size: 300px;
+    top: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #08090b;
+}
+
+.app-name span {
+    font-weight: 300;
+}
+
+/* App */
+
+.app {
+    z-index: 1;
+    height: 50%;
+    width: 400px;
+    min-width: 300px;
+    background: #13171a;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+/* Header */
+.main-header {
+    height: 60px;
+    line-height: 60px;
+    width: 100%;
+    border-bottom: 1px solid #fff;
+    justify-content: center;
+    align-content: center;
+}
+
+.main-header h1 {
+    font-weight: 700;
+}
+
+.main-header h1 span {
+    font-weight: 300;
+}
+
+/* Main */
+main {
+    width: 100%;
+    flex-grow: 1;
+    align-items: flex-end;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.message {
+    width: 90%;
+    margin-bottom: 5px;
+    justify-content: space-between;
+    border-radius: 3px;
+    background: rgb(83, 100, 113);
+    padding: 5px;
+    font-size: 12px;
+    word-break: break-word;
+}
+
+.message .mess-text {
+    font-weight: 400;
+}
+
+.message .mess-time {
+    min-width: 30px;
+    font-size: 9px;
+    align-self: flex-end;
+    font-weight: 400;
+    padding: 0 4px;
+}
+
+.main .message.mess-received {
+    background: rgba(255, 255, 255, 0.753);
+    align-self: flex-start;
+}
+
+
+
+/* Footer */
+footer {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 5px;
+    height: 50px;
+    padding: 10px 10px;
+}
+
+footer .input-chat {
+    height: 95%;
+    padding: 3px;
+    flex-grow: 1;
+    border: 0;
+    border-radius: 3px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+footer .button-send {
+    cursor: pointer;
+    height: 95%;
+    border: 0;
+    border-radius: 3px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 5px 18px;
+    color: #c5c6c6;
+    background: #3a4147;
+    font-size: 14px;
+}
+

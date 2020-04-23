@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat | Handlebars</title>
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- Google Font | Rubik -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- FontAwrsome -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css'/>
+    <!-- Script -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js'></script>
+    <script src="assets/js/main.js"></script>
+</head>
+<body class="u_flex">
+
+    <!-- App Name in Position Absolute -->
+    <h1 class="app-name">
+        <span>mini</span>chat
+    </h1>
+    
+    <!-- App -->
+    <div class="app u_flexColumn">
+        <main class="main u_flexColumn"></main>
+
+        <footer class="u_flex">
+            <input type="text" class="input-chat">
+            <button class="button-send"><i class="fas fa-paper-plane"></i></button>
+        </footer>
+    </div>
+    
+    <!-- Template Handlebars -->
+    <script id="template-chat" type="text/x-handlebars-template">
+        <div class="message u_flex {{ classSend }}">
+          <h3 class="mess-text">{{ text }}</h3>
+          <h4 class="mess-time">{{ time }}</h4>
+        </div>
+      </script>
+    
+
+</body>
+</html>
