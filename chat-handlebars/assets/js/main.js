@@ -6,14 +6,82 @@ $(document).ready( function() {
     var inputChat = $('.input-chat');
     var contChat = $('.main');
     var btnSend = $('.button-send');
+    
+    var randomHello = [
+        'Ey',
+        'Ciao',
+        'Ehila',
+        'Carissimo',
+        'Ciao Bello'
+    ];
 
+    var messDefault = [
+        {
+            text: randomHello[getRandomInt(0, 4)],
+            time:  time(),
+            classSend: 'mess-received'
+        },
+        {
+            text: 'Come stai?',
+            time:  time()
+        },
+        {
+            text: 'Bene',
+            time:  time(),
+            classSend: 'mess-received'
+        }
+    ];
 
+    
+
+    console.log(messDefault);
+    
     // Ottengo Html da usare
     var source = $('#template-chat').html();
     console.log(source);
 
     // Genero utility Handlebars
     var template = Handlebars.compile(source);
+
+
+    // creo i messaggi di default che si leggono all'avvio della chat
+    for (var i = 0; i < messDefault.length; i++) {
+
+        // assegno i valori di text e time a due nuove variabili
+        var newText = messDefault[i].text;
+        var newTime = messDefault[i].time;
+
+        // se la lunghezza dell'oggetto è diversa da due quindi è presente un terzo elemento
+        if(messDefault[i].length != 2) {
+            // prendo anche la classe
+            var newReceived = messDefault[i].classSend
+            
+            // creo un nuovo oggetto con anche la classe
+            var newDefMessage = {
+                text: newText,
+                time: newTime,
+                classSend: newReceived
+            };
+        
+           // altrimenti creo l'oggetto solo con text e time 
+           } else {
+            
+            var newDefMessage = {
+                text: newText,
+                time: newTime,
+           };   
+            
+        };
+        
+    
+        
+        var html = template(newDefMessage)
+
+        contChat.append(html)
+
+    };
+
+
 
     //  Inviare messaggio tramite input chat
 
@@ -94,5 +162,11 @@ $(document).ready( function() {
 
     };
 
+    // Funzione per numero random in un range
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min; 
+      }
 
 }); // <- End Doc Ready
